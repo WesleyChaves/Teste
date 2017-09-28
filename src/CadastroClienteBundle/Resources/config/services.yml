@@ -1,0 +1,4 @@
+services:
+#    cadastro_cliente.example:
+#        class: CadastroClienteBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

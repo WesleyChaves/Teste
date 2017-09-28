@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Cadastroo list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Idade</th>
+                <th>Observacao</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cadastroo in cadastroos %}
+            <tr>
+                <td><a href="{{ path('cadastroo_show', { 'id': cadastroo.id }) }}">{{ cadastroo.id }}</a></td>
+                <td>{{ cadastroo.nome }}</td>
+                <td>{{ cadastroo.email }}</td>
+                <td>{{ cadastroo.idade }}</td>
+                <td>{{ cadastroo.observacao }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('cadastroo_show', { 'id': cadastroo.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('cadastroo_edit', { 'id': cadastroo.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('cadastroo_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Cadastroo</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ cadastroo.id }}</td>
+            </tr>
+            <tr>
+                <th>Nome</th>
+                <td>{{ cadastroo.nome }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ cadastroo.email }}</td>
+            </tr>
+            <tr>
+                <th>Idade</th>
+                <td>{{ cadastroo.idade }}</td>
+            </tr>
+            <tr>
+                <th>Observacao</th>
+                <td>{{ cadastroo.observacao }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('cadastroo_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('cadastroo_edit', { 'id': cadastroo.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
